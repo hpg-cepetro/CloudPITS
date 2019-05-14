@@ -1,0 +1,6 @@
+# This is a CSV file that should contain prices for the desired instances in the following format
+# timestamp	region	az	instance_type	os	price
+#
+# This way it will be possible for the simulator to work
+# Also remove this header after populating the log
+timestamp	region	az	instance_type	os	price
