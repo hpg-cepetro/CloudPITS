@@ -1,5 +1,4 @@
-Instance Selection
----
+# CloudPITS / Instance Selection
 
 This is the initial idea behind Cloud-PITS, which involves selecting a group of instances that provides a price per 
 cost ratio that will execute a given SPITS code in less than an user-defined input amount.
