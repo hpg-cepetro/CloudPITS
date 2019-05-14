@@ -1,16 +1,19 @@
 Instance Selection
 ---
+
 This is the initial idea behind Cloud-PITS, which involves selecting a group of instances that provides a price per 
 cost ratio that will execute a given SPITS code in less than an user-defined input amount.
 Since this is a prototype it still has a lot of limitations and is not ready for general usage. However the general
 idea behind the algorithm is here.
 
  #### Disclaimer
+ 
  This is still a proof of concept. The SPITS program used for validation computes the Zero Offset Non-hyperbolic 
  Common Reflection Surface (DOI:10.1111/j.1365-2478.2012.01055.x) parameters, therefore there are some parameters that
   are currenlty tailored for that specific software. This is not yet generic for any SPITS program!
  
- ####How it works
+ #### How it works
+ 
  The instance selection algorithm works with a stored database containing previous executions performance 
  measurements. By using previous executions information for the same experiment it is possible to infer how the 
  current experiment will perform, therefore allows us to create a good initial instance poll. Additionally, by 
@@ -36,13 +39,15 @@ idea behind the algorithm is here.
  then verify from time to time for instances that are performing below the desired cost vs performance threshold. 
  Replacing bad performing types with better ones. 
  
- ####Database
+ #### Database
+ 
  The algorithm extracts information from a database as configured in the "rds_config.py" file. The database should be
   called "experimentos" and have the tables as displayed in the picture below. There is a SQL script to generate it 
   in the folder "databases/".
  ![](database/experimentos_db.png)
  
- ####Performance measurement report
+ #### Performance measurement report
+ 
  The worker instances must report their performance to the Job Manager via CloudWatch. To do so, the user needs to 
  create a new metric with the following characteristics:
     
@@ -66,6 +71,7 @@ idea behind the algorithm is here.
   optimized.
   
  #### Dependencies
+ 
  The program have a few dependencies. They can be installed using the python pip command:
    
     python3 -m pip install --user -r requirements.txt
